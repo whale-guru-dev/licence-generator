@@ -6,7 +6,8 @@ authHTML();
 
 include 'templates/header.php';
 
-$conn = mysqli_connect("localhost", "root", "", "lc-gen");
+//$conn = mysqli_connect("localhost", "root", "", "lc-gen");
+$conn = mysqli_connect("localhost", "lcgen", "SyEAY-d-2m", "lcgen");
 $result = mysqli_query($conn, "SELECT * FROM licence WHERE uid='" . $_SESSION['uid'] . "'");
 $count = mysqli_num_rows($result);
 

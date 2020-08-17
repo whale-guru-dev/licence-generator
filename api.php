@@ -5,7 +5,8 @@ require_once 'auth.php';
 header('Content-Type: application/json');
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
-    $conn = mysqli_connect("localhost", "root", "", "lc-gen");
+    //$conn = mysqli_connect("localhost", "root", "", "lc-gen");
+    $conn = mysqli_connect("localhost", "lcgen", "SyEAY-d-2m", "lcgen");
     $authResult = mysqli_query($conn, "SELECT * FROM users WHERE email='" . $_POST['email'] . "'");
 
     $authCount = mysqli_num_rows($authResult);

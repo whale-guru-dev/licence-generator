@@ -16,7 +16,8 @@ if($_POST['type'] == 'purchase') {
     }
 
 
-    $conn = mysqli_connect("localhost", "root", "", "lc-gen");
+    //$conn = mysqli_connect("localhost", "root", "", "lc-gen");
+    $conn = mysqli_connect("localhost", "lcgen", "SyEAY-d-2m", "lcgen");
     $query = "INSERT INTO licence (uid, lKey, pType, purchased, expired) VALUES ('" . $_SESSION['uid'] . "','" . $lkey . "','".$pType."','".$purchased."','".$expired."')";
     if (mysqli_query($conn, $query)) {
         mysqli_close($conn);
@@ -28,7 +29,8 @@ if($_POST['type'] == 'purchase') {
         exit();
     }
 } else if($_POST['type'] == 'repurchase') {
-    $conn = mysqli_connect("localhost", "root", "", "lc-gen");
+    //$conn = mysqli_connect("localhost", "root", "", "lc-gen");
+    $conn = mysqli_connect("localhost", "lcgen", "SyEAY-d-2m", "lcgen");
     $result = mysqli_query($conn, "SELECT * FROM licence WHERE uid='" . $_SESSION['uid'] . "'");
     $count = mysqli_num_rows($result);
 

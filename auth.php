@@ -27,7 +27,8 @@ function authAPI()
 
 function isValidUser($user, $pass)
 {
-    $conn = mysqli_connect("localhost", "root", "", "lc-gen");
+    //$conn = mysqli_connect("localhost", "root", "", "lc-gen");
+    $conn = mysqli_connect("localhost", "lcgen", "SyEAY-d-2m", "lcgen");
     $result = mysqli_query($conn, "SELECT * FROM users WHERE email='" . $user . "' and password = '" . md5($pass) . "'");
 
     $count = mysqli_num_rows($result);
@@ -45,7 +46,8 @@ function isValidUser($user, $pass)
 
 function isValidRegister($email, $pass)
 {
-    $conn = mysqli_connect("localhost", "root", "", "lc-gen");
+    //$conn = mysqli_connect("localhost", "root", "", "lc-gen");
+    $conn = mysqli_connect("localhost", "lcgen", "SyEAY-d-2m", "lcgen");
     $chechIfAlready = mysqli_query($conn, "SELECT * FROM users WHERE email='" . $email . "'");
     $count = mysqli_num_rows($chechIfAlready);
     if ($count == 0) {
